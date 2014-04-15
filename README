@@ -17,4 +17,19 @@ by specifying what's really important to us - monitoring and alerting around the
 - Set the thresholds to meaningfull values (See Art of Capacity Planning - required amount + ~20% headroom)
 - Watch alerts go green!
 
+--- IMPORTANT BITS ---
+We're describing the system in terms of the things we think are important.  Like, is the system up?  
+ - alert on a heartbeat failure
+
+ Is the system working correctly?
+ - if this is a webserver, is it serving web content?  Is the web server responding?
+
+ Does the system have ample capacity?
+- alert on cpu higher than X%
+- alert on memory higher than XGb
+
+--- TAKING THINGS FURTHER ---
+Describe the distributed system in terms of alerts; what constitutes an outage?  Systems x,y and z need to be out?
+Or perhaps x% of Y systems need to be out and z% of Q systems need to be out?  Alert on your alerts!  Can you do this
+with nagios?
 

@@ -9,6 +9,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box = "ubuntu-12.04"
 
+  config.vm.network "forwarded_port", guest: 80, host: 8889
+
   config.vm.provision :chef_solo do |chef|
     chef.data_bags_path = "data_bags"
     chef.roles_path = "roles"

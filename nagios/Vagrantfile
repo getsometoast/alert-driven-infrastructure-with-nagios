@@ -1,0 +1,16 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  #make sure chef is installed
+  config.omnibus.chef_version = :latest
+
+  config.vm.box = "ubuntu-12.04"
+
+  config.vm.provision :chef_solo do |chef|
+    chef.add_recipe "nagios"
+    chef.add_recipe "nagios::server"
+  end
+end

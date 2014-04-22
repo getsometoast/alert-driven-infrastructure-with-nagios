@@ -10,6 +10,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu-12.04"
 
   config.vm.provision :chef_solo do |chef|
+    chef.data_bags_path = "data_bags"
+    chef.roles_path = "roles"
+
+    chef.add_recipe "chef-solo-search"
     chef.add_recipe "nagios"
     chef.add_recipe "nagios::server"
   end

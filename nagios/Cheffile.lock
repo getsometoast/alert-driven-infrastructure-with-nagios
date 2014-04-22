@@ -9,6 +9,7 @@ SITE
     bluepill (2.3.1)
       rsyslog (>= 0.0.0)
     build-essential (2.0.0)
+    chef-solo-search (0.5.1)
     chef_handler (1.1.6)
     iis (2.1.0)
       windows (>= 1.2.6)
@@ -58,5 +59,6 @@ SITE
       yum (~> 3.0)
 
 DEPENDENCIES
+  chef-solo-search (>= 0)
   nagios (>= 0)
 
